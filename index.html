@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumya Swet - Live Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            background: #001a33;
+        }
+
+        /* Base gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #003366, #002244);
+            z-index: -3;
+        }
+
+        /* Moving round gradient orbs */
+        .gradient-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            z-index: -2;
+        }
+
+        .orb1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #0066cc, transparent);
+            top: -100px;
+            left: -100px;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .orb2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #004080, transparent);
+            bottom: -50px;
+            right: -50px;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        .orb3 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #0059b3, transparent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float3 30s ease-in-out infinite;
+        }
+
+        .orb4 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, #003d7a, transparent);
+            top: 20%;
+            right: 10%;
+            animation: float4 22s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(100px, 150px);
+            }
+            66% {
+                transform: translate(-50px, 100px);
+            }
+        }
+
+        @keyframes float2 {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(-120px, -80px);
+            }
+            66% {
+                transform: translate(80px, -120px);
+            }
+        }
+
+        @keyframes float3 {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-30%, -60%) scale(1.2);
+            }
+        }
+
+        @keyframes float4 {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(-100px, 80px) scale(0.8);
+            }
+        }
+
+        header {
+            padding: 1.5rem 2rem;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .content {
+            text-align: center;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .live-soon {
+            font-size: 5rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5),
+                             0 0 30px rgba(255, 255, 255, 0.3);
+            }
+            to {
+                text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5),
+                             0 0 50px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        footer {
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1rem;
+            }
+            
+            .live-soon {
+                font-size: 3rem;
+                letter-spacing: 4px;
+            }
+
+            .orb1, .orb2, .orb3, .orb4 {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-orb orb1"></div>
+    <div class="gradient-orb orb2"></div>
+    <div class="gradient-orb orb3"></div>
+    <div class="gradient-orb orb4"></div>
+
+    <header>
+        <div class="logo">Soumya Swet</div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="live-soon">Live Soon</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Soumya Swet. All rights reserved.</p>
+    </footer>
+</body>
+</html>
