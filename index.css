@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Mode - Vibrant Cyan-Green Theme */
+    --background: 150 100% 98%;
+    --foreground: 210 80% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 80% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 80% 8%;
+
+    --primary: 162 95% 60%;
+    --primary-foreground: 210 80% 8%;
+
+    --secondary: 150 40% 92%;
+    --secondary-foreground: 210 80% 8%;
+
+    --muted: 150 30% 90%;
+    --muted-foreground: 210 20% 40%;
+
+    --accent: 162 95% 60%;
+    --accent-foreground: 210 80% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 150 30% 85%;
+    --input: 150 30% 85%;
+    --ring: 162 95% 60%;
+
+    --radius: 1rem;
+    
+    /* Custom design tokens */
+    --gradient-start: 162 100% 70%;
+    --gradient-end: 180 100% 85%;
+    --glass-bg: 0 0% 100%;
+    --glass-border: 162 50% 70%;
+    --shadow-color: 162 95% 60%;
+    --orb-1: 162 95% 65%;
+    --orb-2: 170 90% 70%;
+    --orb-3: 155 85% 65%;
+    --text-glow: 162 95% 60%;
+  }
+
+  .dark {
+    /* Dark Mode - Deep Blue Theme */
+    --background: 215 65% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 60% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 60% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 215 65% 8%;
+
+    --secondary: 217 32% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 210 60% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 18%;
+    --input: 217 32% 18%;
+    --ring: 212 27% 84%;
+    
+    /* Custom design tokens */
+    --gradient-start: 210 80% 20%;
+    --gradient-end: 220 70% 15%;
+    --glass-bg: 220 60% 10%;
+    --glass-border: 210 50% 40%;
+    --shadow-color: 210 100% 50%;
+    --orb-1: 210 80% 35%;
+    --orb-2: 220 75% 30%;
+    --orb-3: 215 70% 32%;
+    --text-glow: 210 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
